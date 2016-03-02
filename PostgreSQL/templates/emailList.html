@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>People currently signed up for mailing list.</h1>
+    <table>
+        {% for name in people %}
+        <tr><td>{{name}}</td></tr>
+        {% endfor %}
+    </table>
+
+    <h1>Sign up for our mailing list!</h1>
+    <form method="POST" action="/emailList">
+
+  <table>
+    <tr><td>Name</td><td><input type="text" name="name" /></td></tr>
+  </table>
+
+<input type="submit" value="Join!"/>
+    
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>What in the world.</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="static/js/modernizr-1.5.min.js"></script>
+</head>
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1>Where in the world?</h1>
+          <h2>Your guide to our solar system.</h2>
+        </div>
+      </div>
+      <nav>
+        <ul class="sf-menu" id="nav">
+          <li
+          {% if selected == "home" %}
+          class="selected"
+          {% endif %}
+          ><a href="/">Home</a></li>
+          <li
+          {% if selected == "blackHole" %}
+          class="selected"
+          {% endif %}
+          ><a href="/blackHole">Black Holes</a></li>
+          <li
+          {% if selected == "eclipse" %}
+          class="selected"
+          {% endif %}
+          ><a href="/eclipse">Eclipse</a></li>
+          <li
+          {% if selected == "comet" %}
+          class="selected"
+          {% endif %}
+          ><a href="/comet">Halleys Comet</a></li>
+          <li><a href="#">Our planets</a>
+            <ul>
+              <li><a href="https://en.wikipedia.org/wiki/Mercury_(planet)">Mercury</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Venus">Venus</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Earth">Earth</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Mars">Mars</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Jupiter">Jupiter</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Saturn">Saturn</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Uranus">Uranus</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Neptune">Neptune</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Pluto">Pluto(Dwarf planet)</a></li>
+            </ul>
+          </li>
+          <li
+          {% if selected == "emailList" %}
+          class="selected"
+          {% endif %}
+          ><a href="/emailList2">Visitors wall</a></li>
+          <li><a href="/contact.php">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div class="gallery">
+        <ul class="images">
+          <li class="show"><img width="950" height="300" src="static/images/99.jpg" alt="simplistic 1" /></li>
+          <li><img width="950" height="300" src="static/images/999.jpg" alt="simplistic 2" /></li>
+        </ul>
+      </div>
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <h3>Latest News</h3>
+          <h4>The next total eclipse will be-</h4>
+          <h5>{{eclipse.date}} at {{eclipse.time}}</h5>
+          <p>It will be the only one this year so dont miss it!.<br /></p>
+        </div>
+        <div class="sidebar">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="http://www.space.com">Space.com</a></li>
+            <li><a href="http://www.nasa.gov">Nasa.gov</a></li>
+            <li><a href="http://nineplanets.org">Nineplanets.org</a></li>
+            <li><a href="https://www.youtube.com">Youtube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+            {%block content %}{% endblock %}
+      </div>
+    </div>
+    <footer>
+      <p>Copyright &copy; CSS3_simplistic_2 | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
+    </footer>
+  </div>
+  <p>&nbsp;</p>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="static/js/jquery.js"></script>
+  <script type="text/javascript" src="static/js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="static/js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="static/js/image_fade.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+    });
+  </script>
+</body>
+</html>

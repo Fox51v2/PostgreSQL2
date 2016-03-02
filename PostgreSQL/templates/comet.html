@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Halleys Comet</h1>
+        
+        <p>In 1705, astronomer Edmond Halley wanted to predict the return of a comet seen by the ancients. He used Isaac Newton's recently developed Laws of Motion plus some observational records, and stated that the comet — which appeared in 1531, 1607 and 1682 — would reappear in 1758.
+        His prediction turned out to be correct, although Halley did not live to see the comet that came to bear his name: Comet 1P/Halley.</p>
+        <p>Halley's Comet played a prominent role in history because it was often seen prominently in the sky. Its nucleus is large and as it neared the Sun it brightened up and was seen for long periods of time.  It appeared in 1066 when King Harold was overthrown by William the Conqueror at the Battle of Hastings. Some historians consider that the comet may have played a role in that tragic event, and it is depicted on the Bayeux Tapestry, which chronicles those events.
+        In 1456, on a return passage, Halley's Comet was excommunicated as an agent of the devil by Pope Calixtus III, but it didn't do any good; the comet came back!
+        During this same apparition, while Turkish forces laid siege to Belgrade (in today's Serbia), the comet was described as a fearsome celestial apparition "with a long tail like that of a dragon" which was perceived by some as being in the form of "a long sword advancing from the west ... "</p>
+
+        <p><h2><center>Video Section</center></h2></p>
+        {% for post in videos %}
+        <h2>{{videos.title}}</h2>
+        <iframe width="620" height="480"
+            src="https://youtube.com/embed/{{post.vidLink}}"></iframe>
+        <p>{{post.description}}</p>
+        {% endfor %}
+{% endblock %}

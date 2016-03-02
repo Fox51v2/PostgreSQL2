@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Black Holes</h1>
+        
+        <p>Don't let the name fool you: a black hole is anything but empty space. Rather, it is a great amount of matter packed into a very small area - think of a star ten times more massive than the Sun squeezed into a sphere approximately the diameter of New York City. The result is a gravitational field so strong that nothing, not even light, can escape. In recent years, NASA instruments have painted a new picture of these strange objects that are, to many, the most fascinating objects in space.</p>
+        <p>Although the term was not coined until 1967 by Princeton physicist John Wheeler, the idea of an object in space so massive and dense that light could not escape it has been around for centuries. Most famously, black holes were predicted by Einstein's theory of general relativity, which showed that when a massive star dies, it leaves behind a small, dense remnant core. If the core's mass is more than about three times the mass of the Sun, the equations showed, the force of gravity overwhelms all other forces and produces a black hole.</p>
+
+        <p>The television show Through the Wormhole provides an interesting look into our universe. It explores the deepest mysteries of existence - 
+        the questions that have puzzled mankind for eternity. What are we made of? What was there before the beginning? Are we really alone? Is there a creator? </p>
+        {% if showing %}
+        <center><p><b>It will air tonight so tune in!</b></p></center>
+        {% else %}
+        <center><P><B>The show is not on tonight so be patient!</B></P></center>
+        {% endif %}
+{% endblock %}

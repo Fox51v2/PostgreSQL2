@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Students that have already signed our wall.</h1>
+    <table>
+        
+        {% for name in people %}
+        <tr><td>{{name['person']}}</td><td>{{name['major']}}</td><td>{{name['year']}}</td><td>{{name['gender']}}</td></tr>
+        <!--<tr><td>{{name.person}}</td><td>{{name.major}}</td><td>{{name.year}}</td><td>{{name.gender}}</td></tr>-->
+        {% endfor %}
+    </table>
+    <h1>In college?? Sign our wall!</h1>
+    <form method="POST" action="/emailList2">
+  <table>
+    <tr><td>Name</td><td><input type="text" name="name" /></td></tr>
+    <tr><td>Major</td><td><input type="text" name="major" /></td></tr>
+    <tr><td>Year</td>
+    <td><select name='year'>
+    <option>Freshman</option>
+    <option>Sophomore</option>
+    <option>Junior</option>
+    <option>Senior</option>
+
+    </select></td>
+  </table>
+  <table>
+  <input type="radio" name="gender" value="Male" checked> Male<br>
+  <input type="radio" name="gender" value="Female"> Female<br>
+  <input type="radio" name="gender" value="Other"> Other  
+  </table>
+<input type="submit" value="Join!"/>
+    
+</form>
+
+
+{% endblock %}
